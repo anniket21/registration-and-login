@@ -16,15 +16,26 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<style>
+ 
+</style>
+
     <title>Registration form</title>
 </head>
 <body>
-    <div class="container">
-  <h2>Registration</h2>
+<div class="row">
+<div class="col-sm-6 ">
+    <img src="../logo/logo1.jpg" width="700px" height="100%" style=>
+</div>
 
-  <form action="../PHP/Registration.php" method="POST" id= "form" >
+    <div class="col-sm-6" style="background-color:aliceblue;">
+  <h2 style="text-align:center; color:mediumblue">REGISTRATION123</h2>
+
+  <form action="../model/registrationdata.php" method="POST" id= "form" >
+  <p class="error"></p>
     <div class="form-group">
-      <label for="uname">Username:</label>
+      <label for="uname">Username</label>
       <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
@@ -36,7 +47,7 @@
       <div class="invalid-feedback">Please fill out this field.</div>
     </div>
     <div class="form-group">
-        <label for="Number">Number</label>
+        <label for="Number">mobNumber</label>
         <input type="number" class="form-control" id="number" placeholder="number" name="number" required>
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
@@ -68,6 +79,8 @@
     <button type="submit"  name= "submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
+    </div>
+
 
 <script src="./Registration.js">
 

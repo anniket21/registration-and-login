@@ -1,5 +1,5 @@
 <?php
-include "../database/conn.php";
+include "../controller/conn.php";
 
 
 if (isset($_POST['submit'])) {
@@ -15,11 +15,11 @@ if (isset($_POST['submit'])) {
    
    if ($confirm_password != $password){
        
-    header('Location:'.$baseurl."/vrmproject/UI/index.php?erromsg=password did not matched");
+    header('Location:'.$baseurl."/vrmproject/view/registration.php?erromsg=password did not matched");
     exit;
 }
 
-$password= hash('sha256', $password);
+   $password= hash('sha256', $password);
 
     $insert_query = 'insert into  users(uname,email,mobNumber,address,password) values 
    ("'.$uname.'","'.$email.'",'.$number.',"'.$address.'","'.$password.'")';
@@ -27,20 +27,15 @@ $password= hash('sha256', $password);
    $iquery = mysqli_query($conn,$insert_query);
    
    if ($iquery){
-       echo "connected";
+    header('Location:'.$baseurl."/vrmproject/view/login.html");
+    exit;
    }
    
    else{
-       echo "false".mysqli_error($conn);
+    header('Location:'.$baseurl."/vrmproject/view/registration.php?erromsg=something went wrong");
+    exit;
    }
 
-
-
-   
-
-
-   header('Location:'.$baseurl."/vrmproject/UI/login.html");
-   exit;
 
 }
 
